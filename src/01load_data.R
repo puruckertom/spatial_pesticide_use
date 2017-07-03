@@ -47,6 +47,7 @@ colnames(national_by_year) <- years
 rownames(national_by_year) <- compounds
 i=0
 for(compound in compounds){
+  print(compound)
   i = i + 1
   j=0
   get_compound_rows <- which(sp_state_high$Compound==compound)
@@ -57,4 +58,7 @@ for(compound in compounds){
       national_by_year[i,j] = sum(sp_state_high$Sum[compound_year])
   }
 }
+View(national_by_year)
+out_national_high <- paste(sp_data,"national_high_summary.csv",sep="")
+write.csv(national_by_year, out_national_high)
 
