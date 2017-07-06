@@ -27,3 +27,7 @@ sp_data <- paste(sp_root, "data/", sep="")
 #check to see if directories are accessible
 boo = file.exists(paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep=""))
 print(paste("check to see if R can access files OK: ", boo))
+
+#files of interest
+file_state_high <- paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep="")
+out_national_high <- paste(sp_data,"national_high_summary.csv",sep="")

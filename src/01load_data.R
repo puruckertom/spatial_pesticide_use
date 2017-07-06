@@ -5,7 +5,6 @@
 # locally data/HighEstimate_AgPestUsebyCropGroup92to14.txt
 
 # load high estimates by state
-file_state_high <- paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep="")
 sp_state_high <- read.table(file_state_high, sep = '\t', header=T)
 dim(sp_state_high)
 head(sp_state_high)
@@ -42,6 +41,7 @@ sp_state_high$Sum <- sp_state_high$Corn + sp_state_high$Soybeans + sp_state_high
 n_compounds <- length(compounds)
 n_years <- length(years)
 n_states <- length(states)
+
 national_by_year <- data.frame(matrix(NA, nrow = n_compounds, ncol = n_years))
 colnames(national_by_year) <- years
 rownames(national_by_year) <- compounds
@@ -59,6 +59,5 @@ for(compound in compounds){
   }
 }
 View(national_by_year)
-out_national_high <- paste(sp_data,"national_high_summary.csv",sep="")
 write.csv(national_by_year, out_national_high)
 
