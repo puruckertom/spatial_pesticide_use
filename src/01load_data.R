@@ -45,6 +45,8 @@ n_states <- length(states)
 national_by_year <- data.frame(matrix(NA, nrow = n_compounds, ncol = n_years))
 colnames(national_by_year) <- years
 rownames(national_by_year) <- compounds
+
+## saved as csv and loaded on next script
 i=0
 for(compound in compounds){
   print(compound)
