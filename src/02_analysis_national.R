@@ -20,8 +20,11 @@ for(compound in compounds){
   use_max <- max(pesticide_use)
   lm_use <- lm(pesticide_use ~ x)
   use_slope <- lm_use$coefficients[[2]]
-  plot(x,pesticide_use,title(main=compound, sub=use_slope))
-  lines(x,predict.lm(lm_use),col='red')
+  x <- 1992:2014
+  plot(x,pesticide_use,type='l',col='red',xlab='Year',
+       ylab='EPest High Estimate',title(main=compound))
+  # sub=use_slope
+  # lines(x,predict.lm(lm_use),col='red')
   compound_info[i,1] <- compound
   compound_info[i,2] <- use_max
   compound_info[i,3] <- use_slope

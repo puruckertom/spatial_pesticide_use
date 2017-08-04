@@ -1,54 +1,54 @@
-state,n_species
-Alabama,127
-Alaska,12
-Arizona,64
-Arkansas,35
-California,301
-Colorado,33
-Connecticut,11
-Delaware,10
-Florida,131
-Georgia,70
-Hawaii,501
-Idaho,16
-Illinois,33
-Indiana,27
-Iowa,19
-Kansas,17
-Kentucky,45
-Louisiana,22
-Maine,12
-Maryland,17
-Massachusetts,16
-Michigan,26
-Minnesota,21
-Mississippi,46
-Missouri,39
-Montana,14
-Nebraska,14
-Nevada,39
-New Hampshire,10
-New Jersey,16
-New Mexico,52
-New York,22
-North Carolina,61
-North Dakota,9
-Ohio,27
-Oklahoma,21
-Oregon,56
-Pennsylvania,16
-Rhode Island,9
-South Carolina,38
-South Dakota,15
-Tennessee,94
-Texas,97
-Utah,43
-Vermont,5
-Virginia,71
-Washington,47
-West Virginia,27
-Wisconsin,23
-Wyoming,12
-American Samoa,26
-Puerto Rico,71
-Virgin Islands,11
+state,n_species,farm_region
+Alabama,127,Southern
+Alaska,12,Northwest
+Arizona,64,Mountain
+Arkansas,35,Delta
+California,301,Pacific
+Colorado,33,Mountain
+Connecticut,11,Northeastern
+Delaware,10,Northeastern
+Florida,131,Southern
+Georgia,70,Southern
+Hawaii,501,Pacific
+Idaho,16,Northwest
+Illinois,33,Heartland
+Indiana,27,GreatLakes
+Iowa,19,UpperMidwest
+Kansas,17,NorthernPlains
+Kentucky,45,EasternMountain
+Louisiana,22,Delta
+Maine,12,Northeastern
+Maryland,17,Northeastern
+Massachusetts,16,Northeastern
+Michigan,26,GreatLakes
+Minnesota,21,UpperMidwest
+Mississippi,46,Delta
+Missouri,39,Heartland
+Montana,14,Mountain
+Nebraska,14,NorthernPlains
+Nevada,39,Pacific
+New Hampshire,10,Northeastern
+New Jersey,16,Northeastern
+New Mexico,52,Mountain
+New York,22,Northeastern
+North Carolina,61,EasternMountain
+North Dakota,9,NorthernPlains
+Ohio,27,GreatLakes
+Oklahoma,21,SouthernPlains
+Oregon,56,Northwest
+Pennsylvania,16,Northeastern
+Rhode Island,9,Northeastern
+South Carolina,38,Southern
+South Dakota,15,NorthernPlains
+Tennessee,94,EasternMountain
+Texas,97,SouthernPlains
+Utah,43,Mountain
+Vermont,5,Northeastern
+Virginia,71,EasternMountain
+Washington,47,Northwest
+West Virginia,27,EasternMountain
+Wisconsin,23,UpperMidwest
+Wyoming,12,Mountain
+American Samoa,26,Other
+Puerto Rico,71,Other
+Virgin Islands,11,Other
