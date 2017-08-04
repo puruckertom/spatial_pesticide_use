@@ -93,3 +93,11 @@ top20 <- cbind(rank20_national_1992_compound,rank20_national_1998_compound,
 
 View(top20)
 write.csv(top20, out_top20)
+
+#top 20 time series plot
+head(national_by_year)
+top20_list <- Reduce(union, list(rank20_national_1992_compound, rank20_national_1998_compound, 
+                   rank20_national_2003_compound, rank20_national_2008_compound,
+                   rank20_national_2014_compound))
+match(as.character(national_by_year$X) == top20_list)
+type(as.character(national_by_year$X))
