@@ -99,5 +99,20 @@ head(national_by_year)
 top20_list <- Reduce(union, list(rank20_national_1992_compound, rank20_national_1998_compound, 
                    rank20_national_2003_compound, rank20_national_2008_compound,
                    rank20_national_2014_compound))
-match(as.character(national_by_year$X) == top20_list)
-type(as.character(national_by_year$X))
+all_compounds <- as.vector(national_by_year$X)
+which_top20 <- all_compounds %in% top20_list
+top20_by_year_temp <- national_by_year[which_top20,]
+top20_rownames <- as.vector(top20_by_year_temp[,1])
+top20_by_year <- top20_by_year_temp[,-1]
+rownames(top20_by_year) <- top20_rownames
+class(top20_by_year)
+top20_by_year.ts <- as.ts(t(top20_by_year))
+rownames(top20_by_year.ts) <- 1992:2014
+ts.plot(top20_by_year.ts, col = 1:30)
+
+x <- 1:23
+for(i in 1:10){
+  lm_use <- lm(top20_by_year.ts[,1] ~ x)
+  summary(lm_use)
+}
+  

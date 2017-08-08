@@ -3,11 +3,7 @@
 
 data("fifty_states") # this line is optional due to lazy data loading
 
-n_species_state <- read.csv(species_state, header=T)
-summary(n_species_state)
-n_species_state.df <- data.frame(state = tolower(n_species_state$state), 
-                                 n_species = n_species_state$n_species)
-summary(n_species_state.df)
+#species_state imported in 00load.R
            
            
 crimes <- data.frame(state = tolower(rownames(USArrests)), USArrests)

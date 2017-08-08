@@ -19,7 +19,10 @@ print((.packages()))
 if(Sys.info()[4]=="DZ2626UTPURUCKE"){
   sp_root<-path.expand("k:/git/spatial_pesticide_use/")
 }
-if(Sys.info()[4]=="stp-air" || Sys.info()[4]=="Coiles-MBP"){
+if(Sys.info()[4]=="stp-air"){
+  sp_root<-path.expand("~/git/spatial_pesticide_use/")
+}
+if(Sys.info()[4]=="Coiles-MacBook-Pro.local" || Sys.info()[4]=="Coiles-MBP"){
   sp_root<-path.expand("~/git/spatial_pesticide_use/")
 }
 print(paste("Root directory location: ", sp_root, sep=""))
@@ -27,13 +30,13 @@ print(paste("Root directory location: ", sp_root, sep=""))
 sp_data <- paste(sp_root, "data/", sep="")
 
 #check to see if directories are accessible
-boo = file.exists(paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep=""))
-print(paste("check to see if R can access files OK: ", boo))
+dir_check = file.exists(paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep=""))
+print(paste("check to see if R can access files OK: ", dir_check))
 
-#files to import
+#files to import from data directory
 file_state_high <- paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep="")
 species_state <- paste(sp_data,"endangered_species_state.csv",sep="")
 
-# outputs
+# outputs to be written
 out_national_high <- paste(sp_data,"national_high_summary.csv",sep="")
 out_top20 <- paste(sp_data,"top20.csv",sep="")

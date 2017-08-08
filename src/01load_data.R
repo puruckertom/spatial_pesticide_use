@@ -1,8 +1,14 @@
 #https://water.usgs.gov/nawqa/pnsp/usage/maps/county-level/
-
 #state level data
 # metadata: https://water.usgs.gov/nawqa/pnsp/usage/maps/county-level/StateLevel/Metadata_AgPestUsebyCropGroup92to14.xml
 # locally data/HighEstimate_AgPestUsebyCropGroup92to14.txt
+
+#import state level metadata with farm regions
+n_species_state <- read.csv(species_state, header=T)
+summary(n_species_state)
+n_species_state.df <- data.frame(state = tolower(n_species_state$state), 
+                                 n_species = n_species_state$n_species)
+summary(n_species_state.df)
 
 # load high estimates by state
 sp_state_high <- read.table(file_state_high, sep = '\t', header=T)
@@ -35,6 +41,7 @@ sp_state_high$Other_crops[is.na(sp_state_high$Other_crops)] <- 0
 sp_state_high$Sum <- sp_state_high$Corn + sp_state_high$Soybeans + sp_state_high$Wheat + sp_state_high$Cotton +
     sp_state_high$Vegetables_and_fruit + sp_state_high$Rice + sp_state_high$Orchards_and_grapes + 
     sp_state_high$Alfalfa + sp_state_high$Pasture_and_hay + sp_state_high$Other_crops
+View(sp_state_high)
 
 #create big summary table by summing across states and years for each compound
 #create dataframe with dims #compounds by # years
@@ -62,4 +69,9 @@ for(compound in compounds){
 }
 View(national_by_year)
 write.csv(national_by_year, out_national_high)
+
+## by usda farm regions
+
+# add region to sp_state_high
+
 
