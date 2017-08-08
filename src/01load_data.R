@@ -7,8 +7,11 @@
 n_species_state <- read.csv(species_state, header=T)
 summary(n_species_state)
 n_species_state.df <- data.frame(state = tolower(n_species_state$state), 
-                                 n_species = n_species_state$n_species)
+                                 n_species = n_species_state$n_species,
+                                 farm_region = n_species_state$farm_region)
 summary(n_species_state.df)
+farm_regions <- as.vector(unique(n_species_state.df$farm_region))
+states <- as.vector(unique(n_species_state.df$state))
 
 # load high estimates by state
 sp_state_high <- read.table(file_state_high, sep = '\t', header=T)
@@ -73,5 +76,12 @@ write.csv(national_by_year, out_national_high)
 ## by usda farm regions
 
 # add region to sp_state_high
+summary(sp_state_high)
+summary(n_species_state.df)
+state_regions <- n_species_state.df[,-2]
+merge(sp_state_high, state_regions)
 
-
+#create use summary time series for each region
+for(region in farm_regions){
+  
+}

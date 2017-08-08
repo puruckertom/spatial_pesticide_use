@@ -1,3 +1,4 @@
+#readin national_by_year (so it does not have to be run again)
 national_by_year <- read.csv(out_national_high)
 dim(national_by_year)
 colnames(national_by_year)
@@ -9,7 +10,6 @@ summary(national_by_year)
 View(national_by_year)
 national_by_year <- national_by_year[,2:25]
 View(national_by_year)
-
 
 #linear slopes for use and create summary table
 compound_info <- data.frame(matrix(NA, nrow = n_compounds, ncol = 4))
