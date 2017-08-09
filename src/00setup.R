@@ -27,7 +27,9 @@ if(Sys.info()[4]=="Coiles-MacBook-Pro.local" || Sys.info()[4]=="Coiles-MBP"){
 }
 print(paste("Root directory location: ", sp_root, sep=""))
 
+#create directories to write to
 sp_data <- paste(sp_root, "data/", sep="")
+sp_graphics <- paste(sp_root, "graphics/", sep="")
 
 #check to see if directories are accessible
 dir_check = file.exists(paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep=""))
@@ -36,6 +38,7 @@ print(paste("check to see if R can access files OK: ", dir_check))
 #files to import from data directory
 file_state_high <- paste(sp_data,"HighEstimate_AgPestUsebyCropGroup92to14.txt",sep="")
 species_state <- paste(sp_data,"endangered_species_state.csv",sep="")
+google_scholar_citations <- paste(sp_data,"google_scholar_cites.csv",sep="")
 
 # outputs to be written
 out_national_high <- paste(sp_data,"national_high_summary.csv",sep="")

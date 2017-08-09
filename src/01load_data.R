@@ -3,6 +3,10 @@
 # metadata: https://water.usgs.gov/nawqa/pnsp/usage/maps/county-level/StateLevel/Metadata_AgPestUsebyCropGroup92to14.xml
 # locally data/HighEstimate_AgPestUsebyCropGroup92to14.txt
 
+#import google citations
+google_cites <- read.csv(google_scholar_citations, header=T)
+summary(google_cites)
+
 #import state level metadata with farm regions
 n_species_state <- read.csv(species_state, header=T)
 summary(n_species_state)
