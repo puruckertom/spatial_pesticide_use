@@ -74,7 +74,6 @@ View(national_by_year)
 write.csv(national_by_year, out_national_high)
 
 ## by usda farm regions
-
 # add region to sp_state_high
 summary(sp_state_high)
 summary(n_species_state.df)
