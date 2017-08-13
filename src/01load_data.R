@@ -3,10 +3,6 @@
 # metadata: https://water.usgs.gov/nawqa/pnsp/usage/maps/county-level/StateLevel/Metadata_AgPestUsebyCropGroup92to14.xml
 # locally data/HighEstimate_AgPestUsebyCropGroup92to14.txt
 
-#import google citations
-google_cites <- read.csv(google_scholar_citations, header=T)
-summary(google_cites)
-
 #import state level metadata with farm regions
 n_species_state <- read.csv(species_state, header=T)
 summary(n_species_state)
@@ -78,13 +74,9 @@ View(national_by_year)
 write.csv(national_by_year, out_national_high)
 
 ## by usda farm regions
+
 # add region to sp_state_high
 summary(sp_state_high)
 summary(n_species_state.df)
 state_regions <- n_species_state.df[,-2]
-merge(sp_state_high, state_regions)
-
-#create use summary time series for each region
-for(region in farm_regions){
-  
-}
+merge(sp_state_high, state_regions, by.y = "name")

@@ -6,7 +6,7 @@ class(google_cites$Pesticide)
 class(google_cites$Citations)
 
 p<-ggplot(data=google_cites, aes(x=Pesticide, y=Citations)) +
-  geom_bar(stat="identity", fill="steelblue") +
+  geom_bar(stat="identity", fill="purple4") +
   geom_text(aes(label=Citations), vjust=-0.3, size=3.5)+
   scale_x_discrete(limits=google_cites$Pesticide)+
   labs(x="Top 20 Pesticides Sorted by Pounds Applied in 2014", 
